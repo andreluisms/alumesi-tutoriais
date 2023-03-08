@@ -1,4 +1,4 @@
-# Tutorial - Construindo um Analisador Sintático com Gramática Abstrata
+# Construindo um Analisador Sintático com Gramática Abstrata
 
 Para o seguinte tutorial, iremos adotar a seguinte linguagem de programação, cuja gramática é apresentada a seguir:
 
@@ -19,7 +19,7 @@ expressao : expressao MAIS expressao
           | NUMERO
 ```
 
-### Passo 1: Definindo as classes da Sintaxe Abstrata
+# Passo 1: Definindo as classes da Sintaxe Abstrata
 Para definição da classe da Sintaxe Abstrata, costuma-se associar uma classe abstrata para cada variável e uma concreta para cada regra. No exemplo a seguir apresentamos as regras relativas a variável listadecomandos. E como foi feito seu mapeamento para a classe abstrata Listadecomandos e as classes concretas UmComando e MaisdeUmComando.
 
 
@@ -54,4 +54,9 @@ class MaisdeUmComando(Listadecomandos):
 Python não apresenta o conceito de sintaxe abstrata. Por isso, usamos o módulo ABC. Ele permite a criação de classes abstratas. Com isso, podemos criar na classe abstrata métodos abstratos (@abstractmethod). Tais métodos serão codificados pelas classes derivadas. Um exemplo disso é o método print(), apresentado no exemplo acima. 
 
 
-#### **QUESTÃO 1: Abra o arquivo [SintaxeAbstrata.py](https://github.com/andreluisms/alumesi-tutoriais/blob/main/lft/2022.2/Tutoriais/Sintaxe%20Abstrata/SintaxeAbstrata.py). Analise o código presente. Codifique o restante da sintaxe abstrata** 
+> **QUESTÃO 1: Abra o arquivo [SintaxeAbstrata.py](https://github.com/andreluisms/alumesi-tutoriais/blob/main/lft/2022.2/Tutoriais/Sintaxe%20Abstrata/SintaxeAbstrata.py). Analise o código presente. Codifique o restante da sintaxe abstrata** 
+
+
+
+# Passo 2: Implementando a gramática no PLY e instanciando classes da sintaxe abstrata.
+
