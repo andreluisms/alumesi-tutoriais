@@ -3,7 +3,6 @@
 Para o seguinte tutorial, iremos adotar a seguinte linguagem de programação, cuja gramática é apresentada a seguir:
 
 ```
-Gramática
 programa → listadecomandos
 listadecomandos → comando
                 | listadecomandos comando
