@@ -25,7 +25,8 @@ class UmComando(Listadecomandos):
     def __init__(self, comando):
         self.comando = comando
     def print(self):
-        pass
+        print('[UmComando]', end='')
+        self.comando.print()
 
 
 class MaisdeUmComando(Listadecomandos):
