@@ -16,9 +16,8 @@ from abc import ABC
 #                  | ID
 #                  | NUMERO
 
-'''
-Programa
-'''
+
+#Programa
 class Programa():
     def __init__(self, listadecomandos):
         self.listadecomandos = listadecomandos
@@ -27,14 +26,11 @@ class Programa():
         pass
 
 
-'''
-Listadecomandos
-'''
+#Listadecomandos
 class Listadecomandos(ABC):
     @abstractmethod
     def print(self):
         pass
-
 
 class UmComando(Listadecomandos):
     def __init__(self, comando):
@@ -42,7 +38,6 @@ class UmComando(Listadecomandos):
     def print(self):
         print('[UmComando]', end='')
         self.comando.print()
-
 
 class MaisdeUmComando(Listadecomandos):
     def __init__(self, comando, listadecomandos):
@@ -52,18 +47,12 @@ class MaisdeUmComando(Listadecomandos):
         pass
 
 
-
-
-'''
-Comando
-'''
+#Comando
 class Comando(ABC):
     @abstractmethod
     def print(self):
         pass
 
-
- 
 class DeclaracaoVariavel(Comando):
     def __init__(self, ID, expressao):
         self.ID = ID
@@ -79,6 +68,4 @@ class AtribuicaoVariavel(Comando):
         pass
 
 
-'''
-Expressao
-'''
+#Expressao
