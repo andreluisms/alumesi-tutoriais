@@ -35,6 +35,6 @@ def p_comando_var_decl(p):
     '''comando : VAR ID ATRIBUICAO expressao PONTOEVIRGULA'''
     p[0] = sa.DeclaracaoVariavel(p[2], p[4])
 
-def p_comando_ATRIBUICAOment(p):
+def p_comando_atribuicao(p):
     '''comando : ID ATRIBUICAO expressao PONTOEVIRGULA'''
     p[0] = sa.DeclaracaoVariavel(p[1], p[3])
