@@ -37,7 +37,7 @@ from abc import ABC
 # listadecomandos → comando
 #                 | listadecomandos comando
 
-class Listadecomandos(metaclass=ABCMeta):
+class Listadecomandos(ABC):
     @abstractmethod
     def print(self):
         pass
