@@ -120,9 +120,9 @@ def parse_programa(input_string):
 input_string = """
 VAR x = 5;
 VAR y = 3;
-WHILE x > 0 DO
+WHILE x + 0 DO
     x = x - y;
-    IF x == 2 THEN
+    IF x + 2 THEN
         y = y * 2;
     ELSE
         y = y + 1;

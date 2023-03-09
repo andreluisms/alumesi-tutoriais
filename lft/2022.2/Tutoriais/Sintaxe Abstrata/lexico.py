@@ -1,15 +1,7 @@
 import ply.lex as lex
 
 # Lista de tokens
-tokens = (
-    'ID',
-    'NUMERO',
-    'MAIS',
-    'MENOS',
-    'VEZES',
-    'DIVIDE',
-    'ATRIBUICAO',
-    'PONTOEVIRGULA',
+reservadas = [
     'IF',
     'THEN',
     'ELSE',
@@ -18,7 +10,20 @@ tokens = (
     'DO',
     'ENDWHILE',
     'VAR',
-)
+]
+
+tokens = [
+    'ID',
+    'NUMERO',
+    'MAIS',
+    'MENOS',
+    'VEZES',
+    'DIVIDE',
+    'ATRIBUICAO',
+    'PONTOEVIRGULA',
+]
+
+tokens = tokens + reservadas
 
 # Expressões regulares para cada token
 t_MAIS      = r'\+'
@@ -35,7 +40,12 @@ t_WHILE     = r'WHILE'
 t_DO        = r'DO'
 t_ENDWHILE  = r'ENDWHILE'
 t_VAR       = r'VAR'
-t_ID = r'[a-zA-Z_][a-zA-Z0-9_]*'
+
+def t_ID(t):
+    r'[a-zA-Z_][a-zA-Z0-9_]*'
+    if t.value in reservadas:
+        t.type = t.value 
+    return t
 
 def t_NUMERO(t):
     r'\d+'
