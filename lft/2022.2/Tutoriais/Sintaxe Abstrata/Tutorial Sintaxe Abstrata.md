@@ -19,6 +19,14 @@ expressao → expressao MAIS expressao
           | NUMERO
 ```
 
+Adicionalmente, façam o download dos seguintes arquivos:
+
+- [lexico.py](https://github.com/andreluisms/alumesi-tutoriais/blob/main/lft/2022.2/Tutoriais/Sintaxe%20Abstrata/lexico.py)
+
+- [sintatico.py](https://github.com/andreluisms/alumesi-tutoriais/blob/main/lft/2022.2/Tutoriais/Sintaxe%20Abstrata/sintatico.py)
+
+- [sintaxeabstrata.py](https://github.com/andreluisms/alumesi-tutoriais/blob/main/lft/2022.2/Tutoriais/Sintaxe%20Abstrata/sintaxeabstrata.py)
+
 # Passo 1: Definindo as classes da Sintaxe Abstrata
 Para definição das classes da Sintaxe Abstrata, costuma-se associar uma classe abstrata para cada variável e uma concreta para cada regra. No exemplo a seguir, apresentamos as regras relativas a variável **listadecomandos** e como foi feito seu mapeamento para a classe abstrata **Listadecomandos** e as classes concretas **UmComando** e **MaisdeUmComando**.
 
