@@ -40,7 +40,7 @@ class UmComando(Listadecomandos):
         self.comando.print()
 
 class MaisdeUmComando(Listadecomandos):
-    def __init__(self, comando, listadecomandos):
+    def __init__(self, listadecomandos, comando):
         self.comando = comando
         self.listadecomandos = listadecomandos
     def print(self):
