@@ -42,7 +42,7 @@ class MaisdeUmComando(Listadecomandos):
 '''
 Comando
 '''
-class Comando(metaclass=ABCMeta):
+class Comando(ABC):
     @abstractmethod
     def print(self):
         pass
