@@ -31,7 +31,7 @@ def p_listadecomandos(p):
     else:
         p[0] = sa.UmComando(p[1])
 
-def p_comando_var_decl(p):
+def p_comando_declaracaovariavel(p):
     '''comando : VAR ID ATRIBUICAO expressao PONTOEVIRGULA'''
     p[0] = sa.DeclaracaoVariavel(p[2], p[4])
 
