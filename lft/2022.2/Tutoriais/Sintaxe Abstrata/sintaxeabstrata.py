@@ -1,6 +1,21 @@
 from abc import abstractmethod
 from abc import ABC
 
+# Gramática
+# programa : listadecomandos
+# listadecomandos : comando
+#                | listadecomandos comando
+# comando : VAR ID ATRIBUICAO expressao PONTOEVIRGULA
+#         | ID ATRIBUICAO expressao PONTOEVIRGULA
+#         | IF expressao THEN listadecomandos ELSE listadecomandos ENDIF
+#         | WHILE expressao DO listadecomandos ENDWHILE
+# expressao : expressao MAIS expressao
+#                  | expressao MENOS expressao
+#                  | expressao VEZES expressao
+#                  | expressao DIVIDE expressao
+#                  | ID
+#                  | NUMERO
+
 '''
 Programa
 '''

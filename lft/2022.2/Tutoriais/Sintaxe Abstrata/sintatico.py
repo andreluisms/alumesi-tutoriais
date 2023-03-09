@@ -7,15 +7,16 @@ import sintaxeabstrata as sa
 # listadecomandos : comando
 #                | listadecomandos comando
 # comando : VAR ID ATRIBUICAO expressao PONTOEVIRGULA
-# comando : ID ATRIBUICAO expressao PONTOEVIRGULA
-# comando : IF expressao THEN listadecomandos ELSE listadecomandos ENDIF
-# comando : WHILE expressao DO listadecomandos ENDWHILE
+#         | ID ATRIBUICAO expressao PONTOEVIRGULA
+#         | IF expressao THEN listadecomandos ELSE listadecomandos ENDIF
+#         | WHILE expressao DO listadecomandos ENDWHILE
 # expressao : expressao MAIS expressao
 #                  | expressao MENOS expressao
 #                  | expressao VEZES expressao
 #                  | expressao DIVIDE expressao
 #                  | ID
 #                  | NUMERO
+
 
 
 # Definindo as regras da gramática
