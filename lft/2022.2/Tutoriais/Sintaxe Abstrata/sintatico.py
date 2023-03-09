@@ -28,9 +28,9 @@ def p_listadecomandos(p):
     '''listadecomandos : comando
                       | listadecomandos comando'''
     if len(p) == 2:
-        p[0] = sa.MaisdeUmComando(p[1], p[2])
-    else:
         p[0] = sa.UmComando(p[1])
+    else:
+        p[0] = sa.MaisdeUmComando(p[1], p[2])
 
 def p_comando_declaracaovariavel(p):
     '''comando : VAR ID ATRIBUICAO expressao PONTOEVIRGULA'''
