@@ -1,5 +1,5 @@
 package br.ufs.lft.simulado01
-#Codigo é somente um esboço. Para sua execução, se faz necessário fazer algumas adequações.
+// Codigo é somente um esboço. Para sua execução, se faz necessário fazer algumas adequações.
 
 
 
@@ -22,6 +22,16 @@ public class sintatico{
            erro();
     }
 
+
+// <statement> →  for <exp> <statement> 
+//              | return ; 
+//              |  if <exp> <statement> else 
+//              | id = <lstExp>
+// <exp> →  <exp_term> + <exp2>
+
+// <exp2>  →  + <exp_term><exp2> | - <exp_term><exp2> 
+// <lstExp> → # <exp> <lstExp> |  # <exp> 
+
     public void statement()
         switch (tok){
             case FOR: proxToken(); exp(); statement(); break;
@@ -35,7 +45,7 @@ public class sintatico{
     public void exp(){
         exp_term(); reconhece (MAIS); exp2();
     }
-
+// <exp_term> → id | true | false | num
     public void exp_term(){
         switch (tok){
             case ID: proxToken(); break;
