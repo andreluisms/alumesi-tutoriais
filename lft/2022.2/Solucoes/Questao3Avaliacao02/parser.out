@@ -1,0 +1,260 @@
+Created by PLY version 3.11 (http://www.dabeaz.com/ply)
+
+Unused terminals:
+
+    MENOS
+
+Grammar
+
+Rule 0     S' -> exp
+Rule 1     exp -> exp MAIS exp
+Rule 2     exp -> exp DIV exp
+Rule 3     exp -> exp VEZES exp
+Rule 4     exp -> exp EXP exp
+Rule 5     exp -> APAR exp FPAR
+Rule 6     exp -> NUM
+
+Terminals, with rules where they appear
+
+APAR                 : 5
+DIV                  : 2
+EXP                  : 4
+FPAR                 : 5
+MAIS                 : 1
+MENOS                : 
+NUM                  : 6
+VEZES                : 3
+error                : 
+
+Nonterminals, with rules where they appear
+
+exp                  : 1 1 2 2 3 3 4 4 5 0
+
+Parsing method: LALR
+
+state 0
+
+    (0) S' -> . exp
+    (1) exp -> . exp MAIS exp
+    (2) exp -> . exp DIV exp
+    (3) exp -> . exp VEZES exp
+    (4) exp -> . exp EXP exp
+    (5) exp -> . APAR exp FPAR
+    (6) exp -> . NUM
+
+    APAR            shift and go to state 2
+    NUM             shift and go to state 3
+
+    exp                            shift and go to state 1
+
+state 1
+
+    (0) S' -> exp .
+    (1) exp -> exp . MAIS exp
+    (2) exp -> exp . DIV exp
+    (3) exp -> exp . VEZES exp
+    (4) exp -> exp . EXP exp
+
+    MAIS            shift and go to state 4
+    DIV             shift and go to state 5
+    VEZES           shift and go to state 6
+    EXP             shift and go to state 7
+
+
+state 2
+
+    (5) exp -> APAR . exp FPAR
+    (1) exp -> . exp MAIS exp
+    (2) exp -> . exp DIV exp
+    (3) exp -> . exp VEZES exp
+    (4) exp -> . exp EXP exp
+    (5) exp -> . APAR exp FPAR
+    (6) exp -> . NUM
+
+    APAR            shift and go to state 2
+    NUM             shift and go to state 3
+
+    exp                            shift and go to state 8
+
+state 3
+
+    (6) exp -> NUM .
+
+    MAIS            reduce using rule 6 (exp -> NUM .)
+    DIV             reduce using rule 6 (exp -> NUM .)
+    VEZES           reduce using rule 6 (exp -> NUM .)
+    EXP             reduce using rule 6 (exp -> NUM .)
+    $end            reduce using rule 6 (exp -> NUM .)
+    FPAR            reduce using rule 6 (exp -> NUM .)
+
+
+state 4
+
+    (1) exp -> exp MAIS . exp
+    (1) exp -> . exp MAIS exp
+    (2) exp -> . exp DIV exp
+    (3) exp -> . exp VEZES exp
+    (4) exp -> . exp EXP exp
+    (5) exp -> . APAR exp FPAR
+    (6) exp -> . NUM
+
+    APAR            shift and go to state 2
+    NUM             shift and go to state 3
+
+    exp                            shift and go to state 9
+
+state 5
+
+    (2) exp -> exp DIV . exp
+    (1) exp -> . exp MAIS exp
+    (2) exp -> . exp DIV exp
+    (3) exp -> . exp VEZES exp
+    (4) exp -> . exp EXP exp
+    (5) exp -> . APAR exp FPAR
+    (6) exp -> . NUM
+
+    APAR            shift and go to state 2
+    NUM             shift and go to state 3
+
+    exp                            shift and go to state 10
+
+state 6
+
+    (3) exp -> exp VEZES . exp
+    (1) exp -> . exp MAIS exp
+    (2) exp -> . exp DIV exp
+    (3) exp -> . exp VEZES exp
+    (4) exp -> . exp EXP exp
+    (5) exp -> . APAR exp FPAR
+    (6) exp -> . NUM
+
+    APAR            shift and go to state 2
+    NUM             shift and go to state 3
+
+    exp                            shift and go to state 11
+
+state 7
+
+    (4) exp -> exp EXP . exp
+    (1) exp -> . exp MAIS exp
+    (2) exp -> . exp DIV exp
+    (3) exp -> . exp VEZES exp
+    (4) exp -> . exp EXP exp
+    (5) exp -> . APAR exp FPAR
+    (6) exp -> . NUM
+
+    APAR            shift and go to state 2
+    NUM             shift and go to state 3
+
+    exp                            shift and go to state 12
+
+state 8
+
+    (5) exp -> APAR exp . FPAR
+    (1) exp -> exp . MAIS exp
+    (2) exp -> exp . DIV exp
+    (3) exp -> exp . VEZES exp
+    (4) exp -> exp . EXP exp
+
+    FPAR            shift and go to state 13
+    MAIS            shift and go to state 4
+    DIV             shift and go to state 5
+    VEZES           shift and go to state 6
+    EXP             shift and go to state 7
+
+
+state 9
+
+    (1) exp -> exp MAIS exp .
+    (1) exp -> exp . MAIS exp
+    (2) exp -> exp . DIV exp
+    (3) exp -> exp . VEZES exp
+    (4) exp -> exp . EXP exp
+
+    MAIS            reduce using rule 1 (exp -> exp MAIS exp .)
+    DIV             reduce using rule 1 (exp -> exp MAIS exp .)
+    VEZES           reduce using rule 1 (exp -> exp MAIS exp .)
+    $end            reduce using rule 1 (exp -> exp MAIS exp .)
+    FPAR            reduce using rule 1 (exp -> exp MAIS exp .)
+    EXP             shift and go to state 7
+
+  ! EXP             [ reduce using rule 1 (exp -> exp MAIS exp .) ]
+  ! MAIS            [ shift and go to state 4 ]
+  ! DIV             [ shift and go to state 5 ]
+  ! VEZES           [ shift and go to state 6 ]
+
+
+state 10
+
+    (2) exp -> exp DIV exp .
+    (1) exp -> exp . MAIS exp
+    (2) exp -> exp . DIV exp
+    (3) exp -> exp . VEZES exp
+    (4) exp -> exp . EXP exp
+
+    DIV             reduce using rule 2 (exp -> exp DIV exp .)
+    VEZES           reduce using rule 2 (exp -> exp DIV exp .)
+    $end            reduce using rule 2 (exp -> exp DIV exp .)
+    FPAR            reduce using rule 2 (exp -> exp DIV exp .)
+    MAIS            shift and go to state 4
+    EXP             shift and go to state 7
+
+  ! MAIS            [ reduce using rule 2 (exp -> exp DIV exp .) ]
+  ! EXP             [ reduce using rule 2 (exp -> exp DIV exp .) ]
+  ! DIV             [ shift and go to state 5 ]
+  ! VEZES           [ shift and go to state 6 ]
+
+
+state 11
+
+    (3) exp -> exp VEZES exp .
+    (1) exp -> exp . MAIS exp
+    (2) exp -> exp . DIV exp
+    (3) exp -> exp . VEZES exp
+    (4) exp -> exp . EXP exp
+
+    DIV             reduce using rule 3 (exp -> exp VEZES exp .)
+    VEZES           reduce using rule 3 (exp -> exp VEZES exp .)
+    $end            reduce using rule 3 (exp -> exp VEZES exp .)
+    FPAR            reduce using rule 3 (exp -> exp VEZES exp .)
+    MAIS            shift and go to state 4
+    EXP             shift and go to state 7
+
+  ! MAIS            [ reduce using rule 3 (exp -> exp VEZES exp .) ]
+  ! EXP             [ reduce using rule 3 (exp -> exp VEZES exp .) ]
+  ! DIV             [ shift and go to state 5 ]
+  ! VEZES           [ shift and go to state 6 ]
+
+
+state 12
+
+    (4) exp -> exp EXP exp .
+    (1) exp -> exp . MAIS exp
+    (2) exp -> exp . DIV exp
+    (3) exp -> exp . VEZES exp
+    (4) exp -> exp . EXP exp
+
+    MAIS            reduce using rule 4 (exp -> exp EXP exp .)
+    DIV             reduce using rule 4 (exp -> exp EXP exp .)
+    VEZES           reduce using rule 4 (exp -> exp EXP exp .)
+    EXP             reduce using rule 4 (exp -> exp EXP exp .)
+    $end            reduce using rule 4 (exp -> exp EXP exp .)
+    FPAR            reduce using rule 4 (exp -> exp EXP exp .)
+
+  ! MAIS            [ shift and go to state 4 ]
+  ! DIV             [ shift and go to state 5 ]
+  ! VEZES           [ shift and go to state 6 ]
+  ! EXP             [ shift and go to state 7 ]
+
+
+state 13
+
+    (5) exp -> APAR exp FPAR .
+
+    MAIS            reduce using rule 5 (exp -> APAR exp FPAR .)
+    DIV             reduce using rule 5 (exp -> APAR exp FPAR .)
+    VEZES           reduce using rule 5 (exp -> APAR exp FPAR .)
+    EXP             reduce using rule 5 (exp -> APAR exp FPAR .)
+    $end            reduce using rule 5 (exp -> APAR exp FPAR .)
+    FPAR            reduce using rule 5 (exp -> APAR exp FPAR .)
+
