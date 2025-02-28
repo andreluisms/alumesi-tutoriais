@@ -1,5 +1,7 @@
 # Tutorial Visitor
-1. Adicionar método def accept(self, visitor) às classes da sintaxe abstrata. Como foi feito com o print(). Classes abstratas não implementam o método (pass), já as concretas, chamam o método correspondente de visita no visitor. 
+1. Usar os arquivos lexico, sintatico e sintaxe abstrata presentes em: https://github.com/andreluisms/alumesi-tutoriais/tree/main/lft/2022.2/Tutoriais/AnaliseSemanticaEPrettyPrinter
+
+2. Adicionar método def accept(self, visitor) às classes da sintaxe abstrata. Como foi feito com o print(). Classes abstratas não implementam o método (pass), já as concretas, chamam o método correspondente de visita no visitor. 
 Por exemplo para **UmComando** temos:
 ```
 class UmComando(Listadecomandos):
@@ -12,7 +14,7 @@ class UmComando(Listadecomandos):
         visitor.visitUmComando(self)
 ```
 
-2. Criar a classe abstrata Visitor. A classe **Visitor** deve ter métodos de visitas para todas as classes concretas da sintaxe abstrata.
+3. Criar a classe abstrata Visitor. A classe **Visitor** deve ter métodos de visitas para todas as classes concretas da sintaxe abstrata.
 Esboço inicial:
 ```
 from abc import abstractmethod
@@ -28,7 +30,7 @@ class Visitor(metaclass=ABCMeta):
  ...
 ```
 
-3. Criar a classe VisitorPrettyPrinter. A classe **VisitorPrettyPrinter** extende **Visitor**. A seguir, um esboço inicial:
+4. Criar a classe VisitorPrettyPrinter. A classe **VisitorPrettyPrinter** extende **Visitor**. A seguir, um esboço inicial:
 ```
 import Visitor
 class VisitorPrettyPrinter(Visitor):
@@ -43,4 +45,4 @@ class VisitorPrettyPrinter(Visitor):
 ...
 ```
 
-4. Criar a classe VisitorSemantico. Neste primeiro exemplo, o **VisitorSemantico** deve lançar erro sempre que em uma expressao aparecer alguma operação de multiplicação. 
+5. Criar a classe VisitorSemantico. Neste primeiro exemplo, o **VisitorSemantico** deve lançar erro sempre que em uma expressao aparecer alguma operação de multiplicação. 
