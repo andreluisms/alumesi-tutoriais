@@ -28,7 +28,7 @@ class Visitor(metaclass=ABCMeta):
  ...
 ```
 
-3. Criar a classe VisitorPrettyPrinter. A classe VisitorPrettyPrinter extende Visitor. A seguir, um esboço inicial:
+3. Criar a classe VisitorPrettyPrinter. A classe **VisitorPrettyPrinter** extende **Visitor**. A seguir, um esboço inicial:
 ```
 import Visitor
 class VisitorPrettyPrinter(Visitor):
@@ -43,4 +43,4 @@ class VisitorPrettyPrinter(Visitor):
 ...
 ```
 
-4. Criar a classe VisitorSemantico. Neste primeiro exemplo, o VisitorSemantico deve lançar erro sempre que em uma expressao aparecer alguma operação de multiplicação. 
+4. Criar a classe VisitorSemantico. Neste primeiro exemplo, o **VisitorSemantico** deve lançar erro sempre que em uma expressao aparecer alguma operação de multiplicação. 
