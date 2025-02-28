@@ -1,7 +1,8 @@
 # Tutorial Visitor
 1. Usar os arquivos lexico, sintatico e sintaxe abstrata presentes em: https://github.com/andreluisms/alumesi-tutoriais/tree/main/lft/2022.2/Tutoriais/AnaliseSemanticaEPrettyPrinter
 
-2. Adicionar método def accept(self, visitor) às classes da sintaxe abstrata. Classes abstratas não implementam o método (pass), já as concretas, chamam o método correspondente de visita no visitor. 
+2. Adicionar método def accept(self, visitor) às classes da sintaxe abstrata. Classes abstratas não implementam o método accept, já as concretas, chamam o método correspondente de visita no visitor. 
+
 Por exemplo para **UmComando** temos:
 ```
 class UmComando(Listadecomandos):
