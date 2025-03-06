@@ -39,7 +39,13 @@ public class u1prova20242{
             default: erro();
         }
     }
-
+   /** Também válido
+   
+    public void parami(){
+            reconhece(ID); reconhece(ID); paramf(); break;
+    }
+    
+    **/
     public void paramf(){
         switch (tok) {
             case VIRGULA: proxToken(); reconhece(ID); reconhece(ID); paramf(); break;
