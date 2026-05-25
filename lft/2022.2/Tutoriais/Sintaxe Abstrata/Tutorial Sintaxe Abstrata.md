@@ -10,15 +10,19 @@ comando → VAR ID ATRIBUICAO expressao PONTOEVIRGULA
         | ID ATRIBUICAO expressao PONTOEVIRGULA
         | IF expressao THEN listadecomandos ELSE listadecomandos ENDIF
         | WHILE expressao DO listadecomandos ENDWHILE
+        | PRINT LPAREN expressao RPAREN PONTOEVIRGULA
+        | PONTOEVIRGULA
+
 expressao → expressao MAIS expressao
           | expressao MENOS expressao
           | expressao VEZES expressao
           | expressao DIVIDE expressao
+          | LPAREN expressao RPAREN
           | ID
           | NUMERO
 ```
 
-Adicionalmente, façam o download dos seguintes arquivos:
+Adicionalmente, façam o download dos seguintes arquivos. Adapte os arquivos conforme necessário.
 
 - [lexico.py](https://github.com/andreluisms/alumesi-tutoriais/blob/main/lft/2022.2/Tutoriais/Sintaxe%20Abstrata/lexico.py)
 
@@ -151,4 +155,56 @@ Finalizado esse passo, adicione no arquivo sintatico.py a seguinte linha de cód
 
 ```
 abstract_syntax_tree.print()
+```
+
+# Passo 4: O Padrão de Projeto Visitor
+
+O padrão Visitor permite separar o algoritmo de operação da estrutura do objeto. Em vez de colocar o método print() dentro de cada classe da AST (o que viola o princípio de responsabilidade única), criamos um objeto visitante que "visita" cada nó da árvore.
+
+Exemplo Inicial: Estrutura do Visitor
+```
+class Visitor(ABC):
+    @abstractmethod
+    def visit(self, no):
+        pass
+
+class PrintVisitor(Visitor):
+    def visit(self, no):
+        method_name = f'visit{type(no).__name__}'
+        visitor = getattr(self, method_name, self.generic_visit)
+        return visitor(no)
+
+    def visitUmComando(self, no):
+        print("Executando UmComando")
+        no.comando.accept(self)
+
+    def generic_visit(self, no):
+        raise Exception(f'No visit_{type(no).__name__} method')
+```
+
+Para isso, cada classe concreta na sua AST deve implementar um método accept(self, visitor):
+```
+class UmComando(Listadecomandos):
+    def __init__(self, comando):
+        self.comando = comando
+    def accept(self, visitor):
+        return visitor.visitUmComando(self)
+```
+
+Questão 05: Analise a estrutura do Visitor acima. Modifique as classes concretas em sintaxeabstrata.py para incluírem o método accept e implemente um Visitor completo capaz de imprimir toda a estrutura da árvore, substituindo o antigo método print().
+
+
+# Passo 5: Criar a classe VisitorPrettyPrinter. A classe VisitorPrettyPrinter estende Visitor. A seguir, um esboço inicial:
+
+```
+import Visitor
+class VisitorPrettyPrinter(Visitor):
+    def visitExpressaoSoma(self, expressaoSoma):
+        expressaoSoma.expesq.accept(self)
+        print(' + ', end='')
+        expressaoSoma.expdir.accept(self)
+    def visitExpressaoSubtracao(self, expressaoSubtracao):
+        expressaoSubtracao.expesq.accept(self)
+        print(' - ', end='')
+        expressaoSubtracao.expdir.accept(self)
 ```
