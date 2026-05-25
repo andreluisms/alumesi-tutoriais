@@ -31,7 +31,7 @@ class Visitor(metaclass=ABCMeta):
  ...
 ```
 
-4. Criar a classe VisitorPrettyPrinter. A classe **VisitorPrettyPrinter** extende **Visitor**. A seguir, um esboço inicial:
+4. Criar a classe VisitorPrettyPrinter. A classe **VisitorPrettyPrinter** estende **Visitor**. A seguir, um esboço inicial:
 ```
 import Visitor
 class VisitorPrettyPrinter(Visitor):
