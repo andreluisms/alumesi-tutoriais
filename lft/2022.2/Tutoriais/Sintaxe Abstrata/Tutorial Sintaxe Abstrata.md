@@ -65,7 +65,7 @@ class MaisdeUmComando(Listadecomandos):
 Python não apresenta o conceito de sintaxe abstrata. Por isso, usamos o **módulo ABC**. **ABC** permite a criação de classes abstratas. Com isso, podemos criar na classe abstrata métodos abstratos (@abstractmethod). Tais métodos serão codificados pelas classes derivadas. Um exemplo disso é o método **print()**, apresentado no exemplo acima. 
 
 
-> *Qestão 01: Abra o arquivo [sintaxeabstrata.py](https://github.com/andreluisms/alumesi-tutoriais/blob/main/lft/2022.2/Tutoriais/Sintaxe%20Abstrata/sintaxeabstrata.py). Analise o código presente. Codifique o restante da sintaxe abstrata* 
+> *Questão 01: Abra o arquivo [sintaxeabstrata.py](https://github.com/andreluisms/alumesi-tutoriais/blob/main/lft/2022.2/Tutoriais/Sintaxe%20Abstrata/sintaxeabstrata.py). Analise o código presente. Codifique o restante da sintaxe abstrata* 
 
 
 
@@ -107,7 +107,7 @@ Percebam que a instância gerada é passada para p[0] que representa a variável
 
 No caso do *else*, instanciamos a classe **MaisdeUmComando**, passando como parâmetros p[1] e p[2], que representam, respectivamente, **listadecomandos** e **comando**. 
 
-> *Qestão 02: Abra o arquivo [sintatico.py](https://github.com/andreluisms/alumesi-tutoriais/blob/main/lft/2022.2/Tutoriais/Sintaxe%20Abstrata/sintatico.py). Analise o código presente. Codifique as regras restantes, incluindo o comportamento para instanciação das classes da sintaxe abstrata* 
+> *Questão 02: Abra o arquivo [sintatico.py](https://github.com/andreluisms/alumesi-tutoriais/blob/main/lft/2022.2/Tutoriais/Sintaxe%20Abstrata/sintatico.py). Analise o código presente. Codifique as regras restantes, incluindo o comportamento para instanciação das classes da sintaxe abstrata* 
 
 
 
@@ -149,7 +149,7 @@ class UmComando(Listadecomandos):
 ```
 
 
-> *Qestão 04: Abra o arquivo [sintaxeabstrata.py](https://github.com/andreluisms/alumesi-tutoriais/blob/main/lft/2022.2/Tutoriais/Sintaxe%20Abstrata/sintaxeabstrata.py). Analise o código presente. Codifique o comando print para todas as classes concretas do arquivo sintaxeabstrata.py* 
+> *Questão 03: Abra o arquivo [sintaxeabstrata.py](https://github.com/andreluisms/alumesi-tutoriais/blob/main/lft/2022.2/Tutoriais/Sintaxe%20Abstrata/sintaxeabstrata.py). Analise o código presente. Codifique o comando print para todas as classes concretas do arquivo sintaxeabstrata.py* 
 
 Finalizado esse passo, adicione no arquivo sintatico.py a seguinte linha de código.
 
@@ -191,7 +191,7 @@ class UmComando(Listadecomandos):
         return visitor.visitUmComando(self)
 ```
 
-Questão 05: Analise a estrutura do Visitor acima. Modifique as classes concretas em sintaxeabstrata.py para incluírem o método accept e implemente um Visitor completo capaz de imprimir toda a estrutura da árvore, substituindo o antigo método print().
+> *Questão 04: Analise a estrutura do Visitor acima. Modifique as classes concretas em sintaxeabstrata.py para incluírem o método accept e implemente um Visitor completo capaz de imprimir toda a estrutura da árvore, substituindo o antigo método print().*
 
 
 # Passo 5: Criar a classe VisitorPrettyPrinter. A classe VisitorPrettyPrinter estende Visitor. A seguir, um esboço inicial:
@@ -208,3 +208,5 @@ class VisitorPrettyPrinter(Visitor):
         print(' - ', end='')
         expressaoSubtracao.expdir.accept(self)
 ```
+
+> *Questão 05: Complete o código da classe VisitorPrettyPrinter. Teste a implementação desenvolvida.*
